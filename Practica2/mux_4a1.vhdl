@@ -12,13 +12,13 @@ architecture behavior of mux_4a1 is
     process (A,B,C,D,S0,S1) is
     begin
       if (S0 ='0' and S1 = '0') then
-          Z <= A;
+          S <= A;
       elsif (S0 ='1' and S1 = '0') then
-          Z <= B;
+          S <= B;
       elsif (S0 ='0' and S1 = '1') then
-          Z <= C;
+          S <= C;
       else
-          Z <= D;
+          S <= D;
       end if;
      
     end process;

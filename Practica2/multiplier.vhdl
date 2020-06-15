@@ -1,5 +1,5 @@
-library ieee;
-use ieee.std_logic_1164.all;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
 entity multiplier is
     port ( A, B: in bit_vector(3 downto 0);

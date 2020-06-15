@@ -2,12 +2,29 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity halfadder is
-  port(a, b: in std_logic;
-       suma, carry: out std_logic); 
+  port ( S: in bit_vector(1 downto 0);
+         F: out bit_vector(1 downto 0));
 end halfadder;
 
-architecture dataflow of halfadder is 
-  begin
-  suma<= a xor b;
-  carry<= a and b; 
-end dataflow;
+architecture arch of halfadder is
+
+  component mux_4a1 is 
+      port ( A: in bit_vector(3 downto 0);
+             S: in bit_vector(1 downto 0);
+             F: out bit);
+  end component;
+
+  --señales
+    signal aux1: bit_vector(3 downto 0);
+    signal aux2: bit_vector(3 downto 0);
+
+    begin
+
+      aux1 <= "0110";
+      aux2 <= "1000";
+
+      --PORT MAPS
+      M1 : mux_4a1 port map (aux1, S, F(0));
+      M2 : mux_4a1 port map (aux2, S, F(1));
+
+end arch;

@@ -1,25 +1,28 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
- 
+library ieee;
+use ieee.std_logic_1164.all;
+
 entity mux_4a1 is
- port(A, B, C, D : in STD_LOGIC;
-     S0,S1: in STD_LOGIC;
-     S: out STD_LOGIC);
+    port ( A: in bit_vector(3 downto 0);
+           S: in bit_vector(1 downto 0);
+           F: out bit);
 end mux_4a1;
 
-architecture behavior of mux_4a1 is
+architecture arch of mux_4a1 is
+
+    signal nS: bit_vector(1 downto 0);
+    signal aux: bit_vector(3 downto 0);
+
     begin
-    process (A,B,C,D,S0,S1) is
-    begin
-      if (S0 ='0' and S1 = '0') then
-          S <= A;
-      elsif (S0 ='1' and S1 = '0') then
-          S <= B;
-      elsif (S0 ='0' and S1 = '1') then
-          S <= C;
-      else
-          S <= D;
-      end if;
-     
-    end process;
-    end behavior;  
+
+        nS(0) <= not S(0);
+        nS(1)<= not S(1);
+
+        
+        aux(3) <= (A(3) and S(0) and S(1));
+        aux(2)<= (A(2) and notS(0) and S(1));
+        aux(1) <= (A(1) and notS(1) and S(0));
+        aux(0) <= (A(0) and notS(0) and nS(1));
+
+        F <= (aux(0) or aux(1) or aux(2) or aux(3)); 
+
+end arch;

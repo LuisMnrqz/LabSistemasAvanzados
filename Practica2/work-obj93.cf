@@ -1,7 +1,0 @@
-v 4
-file . "multiplier.vhdl" "fa593df38d1b3bb076e6e99dca8aa034edcd7a65" "20200615213215.056":
-  entity multiplier at 1( 0) + 0 on 21;
-  architecture arch of multiplier at 9( 177) + 0 on 22;
-file . "multiplier_tb.vhdl" "19f9f85224e8e1b435f49952b5c831fe7ee276f4" "20200615212942.470":
-  entity multiplier_tb at 1( 0) + 0 on 19;
-  architecture arch of multiplier_tb at 7( 94) + 0 on 20;

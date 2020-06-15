@@ -23,10 +23,8 @@ architecture arch of multiplier is
 
     --señales
     signal b1_A, b2_A, b3_A, b4_A: bit_vector(3 downto 0);
-
     signal auxCin: bit_vector(11 downto 0);
     signal auxZ: bit_vector(5 downto 0);
-
     signal n: bit; 
     --Fin señales
 
@@ -73,6 +71,6 @@ architecture arch of multiplier is
         F10: fulladder port map ( S(0) => b4_A(1),      S(1) => auxZ(4),        Cin => auxCin(8),       Z(0) => Z(4),          Z(1) => auxCin(9) );
         F11: fulladder port map ( S(0) => b4_A(2),      S(1) => auxZ(5),        Cin => auxCin(9),       Z(0) => Z(5),          Z(1) => auxCin(10) );
         F12: fulladder port map ( S(0) => b4_A(3),      S(1) => auxCin(7),      Cin => auxCin(10),      Z(0) => Z(6),          Z(1) => auxCin(11) );
-        F13: halfadder port map ( S(0) => '1'    ,     S(1) => auxCin(11),     Z(0) => Z(7)            Z(1) => n );
+        F13: halfadder port map ( S(0) => '1',          S(1) => auxCin(11),     Z(0) => Z(7),           Z(1) => n );
 
 end arch; -- arch

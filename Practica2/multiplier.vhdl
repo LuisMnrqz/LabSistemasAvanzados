@@ -44,12 +44,12 @@ architecture arch of multiplier is
         
         Z(0) <= b1A(0);
 
-        
+
         --P1
         F1: halfadder port map ( S(0) => b2_A(0),    S(1) => b1_A(1),    Z(0) => Z(1),         Z(1) => auxCin(0) );
         F2: fulladder port map ( S(0) => b2_A(1),    S(1) => b1_A(2),    Cin => auxCin(0),     Z(0) => auxZ(0),      Z(1) => auxCin(1) );
         F3: fulladder port map ( S(0) => b2_A(2),    S(1) => b1_A(3),    Cin => auxCin(1),     Z(0) => auxZ(1),      Z(1) => auxCin(2) );
-        F4: fulladder port map ( S(0) => b2_A(3),    S(1) => '1',       Cin => auxCin(2),     Z(0) => auxZ(2),      Z(1) => auxCin(3) );
+        F4: fulladder port map ( S(0) => b2_A(3),    S(1) => '1',        Cin => auxCin(2),     Z(0) => auxZ(2),      Z(1) => auxCin(3) );
         
         b3_A(0) <= B(2) and  A(0);
         b3_A(1) <= B(2) and  A(1);

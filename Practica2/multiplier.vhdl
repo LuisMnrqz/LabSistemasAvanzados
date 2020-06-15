@@ -44,6 +44,7 @@ architecture arch of multiplier is
         
         Z(0) <= b1A(0);
 
+        
         --P1
         F1: halfadder port map ( S(0) => b2_A(0),    S(1) => b1_A(1),    Z(0) => Z(1),         Z(1) => auxCin(0) );
         F2: fulladder port map ( S(0) => b2_A(1),    S(1) => b1_A(2),    Cin => auxCin(0),     Z(0) => auxZ(0),      Z(1) => auxCin(1) );
@@ -54,6 +55,7 @@ architecture arch of multiplier is
         b3_A(1) <= B(2) and  A(1);
         b3_A(2) <= B(2) and  A(2);
         b3_A(3) <= B(2) nand A(3);
+
         
         --P2
         F5: halfadder port map ( S(0) => b3_A(0),    S(1) => auxZ(0),      Z(0) => Z(2),       Z(1) => auxCin(4) );
@@ -65,6 +67,7 @@ architecture arch of multiplier is
         b4_A(1) <= B(3) nand A(1);
         b4_A(2) <= B(3) nand A(2);
         b4_A(3) <= B(3) and  A(3);
+
 
         --P3
         F9:  halfadder port map ( S(0) => b4_A(0),      S(1) => auxZ(3),        Z(0) => Z(3),           Z(1) => auxCin(8) );

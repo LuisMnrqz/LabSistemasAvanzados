@@ -7,18 +7,17 @@ end FFJK_tb;
 architecture arch of FFJK_tb is
 
     component FFJK is
-        port ( clk, J, K, preset, clear, E: in bit;
+        port ( CLK, J, K, PRESET, CLEAR, EN: in bit;
                Q, Qn: out bit);
     end component;
 
     --Señales
-    signal clk , J, K, preset, clear, E: bit;
-    signal Q, Qn: bit;
+    signal CLK, J, K, PRESET, CLEAR, EN, Q, Qn: bit;
 
     begin
 
     --PORT MAP
-    FSO: FF_JK port map(clk, J, K, preset, clear, E, Q, Qn);
+    FSO: FF_JK port map(CLK, J, K, PRESET, CLEAR, EN, Q, Qn);
 
     process
         begin    

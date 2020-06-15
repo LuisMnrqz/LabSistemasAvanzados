@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity FFJK is
-    port ( clk, J, K, preset, clear, E: in bit;
+    port ( CLK, J, K, PRESET, CLEAR, EN: in bit;
            Q, Qn: out bit);
 end FFJK;
 
@@ -16,19 +16,19 @@ architecture arch of FFJK is
         Q <= iQ;
         Qn <= not iQ;
 
-        process(clk, preset, clear)
+        process (CLK, PRESET, CLEAR)
             begin
 
-            if E = '0' then
+            if EN = '0' then
                 null;
 
-                elsif clear = '0' then
+                elsif CLEAR = '0' then
                     iQ <= '0';
 
-                elsif preset = '0' then
+                elsif PRESET = '0' then
                     iQ <= '1';
 
-                elsif (clk = '1') and (clk'event) then
+                elsif (CLK = '1') and (CLK'event) then
                     
                     if (J = '0') and (K = '0') then
                         iQ <= iQ;

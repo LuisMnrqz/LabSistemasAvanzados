@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity mux_4a1 is
     port ( A: in bit_vector(3 downto 0);
            S: in bit_vector(1 downto 0);
-           F: out bit);
+           Z: out bit);
 end mux_4a1;
 
 architecture arch of mux_4a1 is
@@ -23,6 +23,6 @@ architecture arch of mux_4a1 is
         aux(1) <= (A(1) and notS(1) and S(0));
         aux(0) <= (A(0) and notS(0) and nS(1));
 
-        F <= (aux(0) or aux(1) or aux(2) or aux(3)); 
+        Z <= (aux(0) or aux(1) or aux(2) or aux(3)); 
 
 end arch;

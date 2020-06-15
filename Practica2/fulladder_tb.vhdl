@@ -9,16 +9,16 @@ architecture arch of fulladder_tb is
     component fulladder is
         port ( S: in bit_vector(1 downto 0);
                Cin: in bit;
-               F: out bit_vector(1 downto 0));
+               Z: out bit_vector(1 downto 0));
     end component;
 
-    signal S, F: bit_vector(1 downto 0);
+    signal S, Z: bit_vector(1 downto 0);
     signal Cin: bit;
 
     begin
         
         --PORT MAP
-        FA : fulladder port map (S, Cin, F);
+        FA : fulladder port map (S, Cin, Z);
 
         process
 

@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 entity fulladder is
     port ( S: in bit_vector(1 downto 0);
            Cin: in bit;
-           F: out bit_vector(1 downto 0));
+           Z: out bit_vector(1 downto 0));
 end fulladder;
 
 architecture arch of fulladder is
@@ -12,7 +12,7 @@ architecture arch of fulladder is
     component mux_4a1 is 
     port ( A: in bit_vector(3 downto 0);
            S: in bit_vector(1 downto 0);
-           F: out bit);
+           Z: out bit);
     end component;
 
     signal aux1, aux2: bit_vector(3 downto 0);

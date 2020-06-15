@@ -9,16 +9,16 @@ architecture arch of mux_4a1_tb is
     component mux_4a1 is 
       port ( A: in bit_vector(3 downto 0);
              S: in bit_vector(1 downto 0);
-             F: out bit);
+             Z: out bit);
     end component;
 
     signal A: bit_vector(3 downto 0);
     signal S: bit_vector(1 downto 0);
-    signal F: bit;
+    signal Z: bit;
 
     begin
 
-        M: mux_4a1 port map(A, S, F);
+        M: mux_4a1 port map(A, S, Z);
 
         process
             begin

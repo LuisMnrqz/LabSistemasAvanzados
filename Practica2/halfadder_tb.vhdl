@@ -8,7 +8,7 @@ architecture arch of fulladder_tb is
 
     component halfadder is
         port ( S: in bit_vector(1 downto 0);
-               F: out bit_vector(1 downto 0));
+               Z: out bit_vector(1 downto 0));
     end component;
 
     signal S, F: bit_vector(1 downto 0);
@@ -16,7 +16,7 @@ architecture arch of fulladder_tb is
     begin
         
         --PORT MAP
-        HA : halfadder port map (S, F);
+        HA : halfadder port map (S, Z);
 
         process
 

@@ -6,7 +6,7 @@ entity multiplier is
            Z: out bit_vector(7 downto 0));
 end multiplier;
 
-architecture arch of ent is
+architecture arch of multiplier is
 
     --Componentes
     component halfadder is
